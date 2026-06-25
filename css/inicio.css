@@ -338,7 +338,7 @@ body {
 
 .logo-animado-home {
     width: 100%;
-    max-width: 500px; /* Ajusta este número al tamaño real que quieras que ocupe el logo en tu pantalla */
+    max-width: 750px; /* Ajusta este número al tamaño real que quieras que ocupe el logo en tu pantalla */
     height: auto;
     display: block;
     margin: 0 auto; /* Lo centra automáticamente si está dentro de un contenedor contenedor */
