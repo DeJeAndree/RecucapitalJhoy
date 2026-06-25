@@ -1,0 +1,138 @@
+.nosotros-main {
+    background-color: #eeeff3; /* El fondo grisáceo claro de esta sección en Figma */
+    padding: 80px 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título Principal Centrado */
+.nosotros-header {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.casos-header {
+    text-align: left;         
+    width: 100%;              
+    max-width: 900px;         
+    margin-bottom: 50px;
+}
+
+.casos-header .subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #161d3a;
+    letter-spacing: 2px;
+}
+
+.casos-header .main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: #161d3a; 
+    margin: 15px 0 20px 0;
+    line-height: 1.2;
+}
+
+/* 🌟 Ahora sí tiene el punto inicial */
+.casos-header .main-title .texto-resaltado {
+    color: #5b7bb0;
+}
+
+
+.casos-header .header-desc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #777777;
+    line-height: 1.6;
+}
+
+
+
+.nosotros-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #161d3a;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Contenedor de las dos columnas */
+.mision-vision-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* Cada bloque individual (Misión / Visión) */
+.mv-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 0 20px;
+}
+
+/* Número Gigante de Fondo */
+.mv-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 700;
+    color: #cccccc;
+    opacity: 0.6;
+    line-height: 1;
+    margin-bottom: -35px; /* Hace que el título se encime sutilmente como en Figma */
+    user-select: none;
+}
+
+/* Títulos Misión y Visión */
+.mv-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: #436294; 
+    position: relative;
+    z-index: 2;
+    margin-bottom: 25px;
+}
+
+.mv-desc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.7;
+    max-width: 440px;
+}
+
+.vertical-divider {
+    width: 1px;
+    height: 320px; /* Altura ideal para cubrir el bloque */
+    background-color: #b0b0b0;
+    align-self: center;
+    opacity: 0.7;
+}
+
+.btn-consultarnostros{
+    background-color: #161d3a;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 14px 40px;
+    border-radius: 0px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    margin-right: auto; 
+    text-align: left;
+    margin-top: 25px;
+}  
+

@@ -1,0 +1,305 @@
+.detalle-servicio-container {
+    background-color: #ffffff;
+    padding: 60px 8% 80px 8%;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Botón de regreso */
+.back-services-container {
+    max-width: 1100px;
+    margin: 0 auto 40px auto;
+}
+
+.btn-back-services {
+    display: inline-block;
+    color: #161d3a;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 1px solid #c8c8c8;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-back-services:hover {
+    background-color: #161d3a;
+    color: #ffffff;
+    border-color: #161d3a;
+}
+
+/* Distribución en dos columnas */
+.servicio-layout {
+    display: flex;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Columna Izquierda (Información) */
+.servicio-main-info {
+    flex: 2;
+}
+
+.servicio-detail-subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: #5b7bb0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.servicio-detail-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: #161d3a;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+
+.servicio-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+.servicio-header-desc {
+    max-width: 320px;
+    font-size: 13px;
+    color: #718096;
+    line-height: 1.5;
+    text-align: right;
+}
+
+.servicio-line-divider {
+    height: 2px;
+    background-color: #161d3a;
+    margin-bottom: 40px;
+}
+
+/* --- Grid de Sub-servicios (Las 6 Tarjetas) --- */
+.subservicios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.subservicio-card {
+    background-color: #f8fafc; /* Un gris sutil y limpio */
+    border-radius: 8px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* Borde azul oscuro para la tarjeta activa (la primera) */
+.subservicio-card.active-border {
+    border-left-color: #161d3a;
+}
+
+.subservicio-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.subservicio-num {
+    font-size: 15px;
+    font-weight: 700;
+    color: #94a3b8;
+}
+
+.subservicio-tag {
+    font-size: 10px;
+    font-weight: 600;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    background-color: #ffffff;
+}
+
+.subservicio-card h3 {
+    font-size: 18px;
+    color: #161d3a;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.subservicio-card p {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Botón "+" abajo a la derecha */
+.subservicio-btn-plus {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #cbd5e1;
+    background-color: #ffffff;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Columna Derecha (Caja de Acción Lateral) */
+.servicio-sidebar-cta {
+    flex: 1;
+    align-self: flex-start;
+}
+
+.cta-box-card {
+    background-color: #161d3a;
+    border-radius: 12px;
+    padding: 40px 30px;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(22, 29, 58, 0.15);
+}
+
+.cta-box-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.cta-box-card p {
+    font-size: 13px;
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.btn-cta-box {
+    display: block;
+    background-color: #ffffff;
+    color: #161d3a;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 15px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.btn-cta-box:hover {
+    background-color: #f1f5f9;
+}
+
+/* Responsive para tabletas y celulares */
+@media (max-width: 1024px) {
+    .servicio-header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .servicio-header-desc {
+        text-align: left;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .servicio-layout {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .subservicios-grid {
+        grid-template-columns: 1fr; /* Pone las tarjetas en una sola columna en pantallas móviles */
+    }
+}
+
+/* --- Estilos para el efecto Desplegable (Acordeón) --- */
+
+/* El contenido extra empieza oculto, con opacidad 0 y sin altura */
+.subservicio-desplegable {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease-out, opacity 0.3s ease;
+    border-top: 1px solid transparent;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Cuando se añade la clase .open mediante JavaScript, se despliega */
+.subservicio-card.open .subservicio-desplegable {
+    max-width: 100%;
+    max-height: 700px; /* Altura máxima estimada para que quepa el texto */
+    opacity: 1;
+    border-top: 1px solid #cbd5e1;
+    margin-top: 15px;
+    padding-top: 15px;
+}
+
+/* Estilos para los textos y viñetas dentro del despliegue */
+.subservicio-desplegable p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.subservicio-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.subservicio-list li {
+    font-size: 13px;
+    color: #718096;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* El guion largo (—) de tus viñetas según tu diseño */
+.subservicio-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: #a0aec0;
+}
+
+/* Estilo del botón interactivo (cambiará dinámicamente) */
+.subservicio-btn-toggle {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #cbd5e1;
+    background-color: #ffffff;
+    color: #718096;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    user-select: none;
+}
+
+.subservicio-btn-toggle:hover {
+    background-color: #f1f5f9;
+}

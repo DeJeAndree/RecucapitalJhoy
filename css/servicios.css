@@ -1,0 +1,133 @@
+.servicios-container {
+    background-color: #ffffff;
+    padding: 60px 8% 80px 8%;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Título de la página */
+.servicios-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.servicios-main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: #161d3a;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.servicios-main-title .texto-azul {
+    color: #5b7bb0;
+}
+
+/* 💻 Configuración de la Rejilla en 2 Columnas */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Crea dos columnas de igual tamaño */
+    gap: 40px 50px; /* Espaciado entre tarjetas (40px arriba/abajo, 50px lados) */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Tarjetas Blancas Comunes */
+.servicio-card {
+    background: #ffffff;
+    border: 1px solid #c8c8c8;
+    border-radius: 12px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06); /* Sombra suave como tu Figma */
+    transition: transform 0.3s ease;
+}
+
+.servicio-card:hover {
+    transform: translateY(-5px); /* Efecto sutil al pasar el mouse */
+}
+
+.servicio-icon {
+    width: 60px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.servicio-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #161d3a;
+    font-weight: 700;
+}
+
+/* 🌙 Tarjeta Azul Oscuro Especial (Número 8) */
+.card-dark {
+    background-color: #161d3a;
+    border: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow-circle {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.servicio-title-dark {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.servicio-desc-dark {
+    color: #a0aec0;
+    font-size: 13px;
+}
+
+/* Contenedor del Botón Final */
+.action-container {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.btn-iniciar-consulta {
+    display: inline-block;
+    background-color: #161d3a;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 15px 45px;
+    transition: background-color 0.3s;
+}
+
+.btn-iniciar-consulta:hover {
+    background-color: #232d54;
+}
+
+/* 📱 Responsive automático para celulares */
+@media (max-width: 768px) {
+    .servicios-grid {
+        grid-template-columns: 1fr; /* Pasa a 1 sola columna si la pantalla es chica */
+        gap: 25px;
+    }
+}
+
+.servicio-card-link {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit;        /* Mantiene tus colores originales */
+    display: block;
+}

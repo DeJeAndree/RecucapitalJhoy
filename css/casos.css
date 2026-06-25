@@ -1,0 +1,152 @@
+.casos-main {
+    background-color: #fcfcfc;
+    padding: 60px 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Encabezado */
+.casos-header {
+    text-align: left;         
+    width: 100%;              
+    max-width: 900px;         
+    margin-bottom: 50px;
+}
+
+.casos-header .subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #161d3a;
+    letter-spacing: 2px;
+}
+
+.casos-header .main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: #161d3a; 
+    margin: 15px 0 20px 0;
+    line-height: 1.2;
+}
+
+/* 🌟 Ahora sí tiene el punto inicial */
+.casos-header .main-title .texto-resaltado {
+    color: #5b7bb0;
+}
+
+.casos-header .header-desc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #777777;
+    line-height: 1.6;
+}
+
+.divider-line {
+    width: 150px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #b0b0b0, transparent);
+    margin: 30px auto 0 auto;
+}
+
+/* Contenedor de Tarjetas */
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Tarjeta Individual */
+.caso-card {
+    background-color: #eeeff3; /* El color grisáceo claro de fondo */
+    border-left: 4px solid #161d3a; /* Línea gruesa izquierda */
+    padding: 30px 40px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-radius: 4px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.caso-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* Número Gigante */
+.card-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    font-weight: 700;
+    color: #cccccc;
+    margin-right: 35px;
+    user-select: none;
+    min-width: 70px;
+}
+
+/* Contenido Interno */
+.card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.case-id {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    color: #999999;
+    letter-spacing: 1px;
+}
+
+.client-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #161d3a;
+    font-weight: 700;
+}
+
+.case-desc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    max-width: 550px;
+}
+
+/* Etiqueta inferior */
+.tag {
+    align-self: flex-start;
+    border: 1px solid #161d3a;
+    color: #161d3a;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 16px;
+    letter-spacing: 1px;
+    background-color: #ffffff;
+}
+
+/* Botón Circular con Flecha */
+.circle-btn {
+    width: 45px;
+    height: 45px;
+    border: 1px solid #161d3a;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #161d3a;
+    font-size: 20px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    margin-left: 20px;
+}
+
+.circle-btn:hover {
+    background-color: #161d3a;
+    color: #ffffff;
+}

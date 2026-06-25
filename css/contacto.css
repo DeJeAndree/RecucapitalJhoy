@@ -1,0 +1,239 @@
+/* ==========================================================================
+   CSS SECCIÓN CONTACTO: VERSIÓN FINAL CORREGIDA CON ICONOS
+   ========================================================================== */
+
+/* --- CONTENEDOR MAESTRO --- */
+div.contacto-page-section {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    color: #1d2a44;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    width: 100%;
+    max-width: 1140px; 
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* --- CABECERA --- */
+.contacto-page-section .contacto-header {
+    text-align: center;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.contacto-page-section .contacto-main-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #1d2a44;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.contacto-page-section .contacto-subtitle {
+    font-size: 1.15rem;
+    color: #5b7bb0;
+    font-weight: 500;
+}
+
+/* --- COLUMNAS (GRID) --- */
+.contacto-page-section .contacto-container-flex {
+    display: grid;
+    grid-template-columns: 46% 50%; 
+    column-gap: 4%;
+    align-items: start;
+    width: 100%;
+    margin-bottom: 60px;
+    box-sizing: border-box;
+}
+
+/* --- COLUMNA IZQUIERDA --- */
+.contacto-page-section .contacto-info-column {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contacto-page-section .contacto-info-column h2 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #1d2a44;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.contacto-page-section .contacto-info-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555555;
+    margin-bottom: 35px;
+}
+
+/* Contenedor padre de la lista */
+.contacto-page-section .contacto-item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 25px;
+}
+
+/* Fila dividida de cada contacto (Icono + Texto) */
+.contacto-page-section .contacto-item {
+    display: grid;
+    grid-template-columns: 35px 1fr; /* 35px para el icono, el resto para el texto */
+    align-items: center; 
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Ajuste específico para la fila del horario (segundo ítem) para que el reloj no flote en medio si hay 2 líneas */
+.contacto-page-section .contacto-item:nth-child(2) {
+    align-items: start;
+}
+.contacto-page-section .contacto-item:nth-child(2) .contacto-icon {
+    margin-top: 3px;
+}
+
+/* Estilo y control de tamaño para las imágenes de los iconos */
+.contacto-page-section .contacto-icon {
+    width: 22px;
+    height: auto;
+    object-fit: contain;
+    justify-self: start;
+}
+
+/* Estilo para los datos de texto */
+.contacto-page-section .contacto-item span {
+    font-weight: 500;
+    color: #1d2a44;
+}
+
+/* --- COLUMNA DERECHA (FORMULARIO) --- */
+.contacto-page-section .contacto-form-card {
+    width: 100%;
+    background-color: #e4eef9; 
+    padding: 35px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.contacto-page-section .form-group {
+    margin-bottom: 18px;
+    width: 100%;
+}
+
+.contacto-page-section .form-group input,
+.contacto-page-section .form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: #333333;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.contacto-page-section .form-group textarea {
+    height: 110px;
+    resize: none;
+}
+
+.contacto-page-section .btn-enviar-contacto {
+    width: 100%;
+    padding: 15px;
+    background-color: #1d2a44;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.contacto-page-section .btn-enviar-contacto:hover {
+    background-color: #263757;
+}
+
+/* --- MAPA Y ELEMENTOS INFERIORES --- */
+.contacto-page-section .contacto-mapa-section {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contacto-page-section .contacto-section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #5b7bb0;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.contacto-page-section .contacto-mapa-wrapper {
+   width: 100%;
+    height: 400px; /* Controla la altura del mapa */
+    border-radius: 8px; /* Bordes redondeados elegantes que combinan con el formulario */
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+}
+
+.contacto-page-section .contacto-mapa-wrapper img, .contacto-page-section .contacto-mapa-wrapper iframe  {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+}
+    
+/* --- GALERÍA ESTUDIO --- */
+.contacto-page-section .contacto-estudio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.contacto-page-section .estudio-photo-box {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border: 1px solid #b0b0b0;
+    background-color: #fafafa;
+    border-radius: 4px;
+}
+.contacto-page-section .estudio-photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+    border-radius: 4px;
+    }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1200px) {
+    div.contacto-page-section {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    div.contacto-page-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .contacto-page-section .contacto-container-flex {
+        grid-template-columns: 1fr;
+        row-gap: 40px;
+    }
+    .contacto-page-section .contacto-item {
+        grid-template-columns: 35px 1fr; /* Mantiene la estructura de iconos en móvil */
+        gap: 0;
+    }
+    .contacto-page-section .contacto-estudio-grid {
+        grid-template-columns: 1fr;
+    }
+}
