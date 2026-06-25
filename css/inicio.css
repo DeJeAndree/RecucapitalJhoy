@@ -11,11 +11,12 @@ body {
 
 .navbar {
     display: grid;
-    grid-template-columns: 1fr auto 1fr; /* 🌟 Segmenta en 3: izquierda (flexible), centro (autoajustable) y derecha (flexible) */
+    grid-template-columns: 1fr auto 1fr;
+    /* 🌟 Segmenta en 3: izquierda (flexible), centro (autoajustable) y derecha (flexible) */
     align-items: center;
-    padding: 20px 8%; 
+    padding: 20px 8%;
     background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -31,46 +32,49 @@ body {
     cursor: pointer;
     transition: transform 0.2s ease;
 }
+
 .nav-menu {
-   display: flex;
-    gap: 35px;          
-    align-items: center;  
-    justify-content: center; /* El menú se clava matemáticamente en el medio de la pantalla */
+    display: flex;
+    gap: 35px;
+    align-items: center;
+    justify-content: center;
+    /* El menú se clava matemáticamente en el medio de la pantalla */
 }
 
 .nav-icon:hover {
-    transform: scale(1.18);  
+    transform: scale(1.18);
 }
 
 .nav-img {
-    width: 18px;             
+    width: 18px;
     height: auto;
     object-fit: contain;
-    filter: brightness(0);   
-    opacity: 0.7;            
+    filter: brightness(0);
+    opacity: 0.7;
     transition: opacity 0.2s ease;
 }
 
 .nav-icon:hover .nav-img {
-    opacity: 1;              
+    opacity: 1;
 }
 
 .logo {
-    display: flex;       
-    align-items: center; 
-    gap: 12px;           
+    display: flex;
+    align-items: center;
+    gap: 12px;
     font-family: 'Playfair Display', serif;
     font-size: 24px;
     font-weight: 700;
-    color: #1a252f;      
+    color: #1a252f;
     letter-spacing: 1px;
-    justify-content: flex-start; /* Logo siempre pegado a su extremo izquierdo */
+    justify-content: flex-start;
+    /* Logo siempre pegado a su extremo izquierdo */
 
 }
 
 .logo1 {
-    height: 40px;        
-    width: auto;         
+    height: 40px;
+    width: auto;
     object-fit: contain;
     display: block;
 }
@@ -81,12 +85,12 @@ body {
     color: #555555;
     font-size: 15px;
     font-weight: 500;
-    white-space: nowrap; 
+    white-space: nowrap;
     transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #161d3a; 
+    color: #161d3a;
 }
 
 .nav-socials {
@@ -94,28 +98,29 @@ body {
     align-items: center;
     gap: 15px;
     padding-left: 15px;
-    border-left: 1px solid #e0e0e0; 
-    justify-self: end; 
+    border-left: 1px solid #e0e0e0;
+    justify-self: end;
 }
+
 .logogrande {
-    width: 100%;             
+    width: 100%;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    padding: 40px 0; 
-    background-color: #fcfcfc; 
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    background-color: #fcfcfc;
 }
 
 .logo2 {
-    width: 480px; 
-    height: auto; 
-    display: block;          
-    margin: 0 auto;          
+    width: 480px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
     object-fit: contain;
 }
 
 .footer {
-    background-color: #161d3a; 
+    background-color: #161d3a;
     color: #ffffff;
     padding: 60px 8% 30px 8%;
     font-family: 'Poppins', sans-serif;
@@ -126,7 +131,7 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     gap: 40px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
 .footer-col {
@@ -139,10 +144,10 @@ body {
 }
 
 .footer-logo {
-    height: 150px; 
+    height: 150px;
     width: auto;
     margin-bottom: 20px;
-    filter: brightness(0) invert(1); 
+    filter: brightness(0) invert(1);
 }
 
 .desc-col p {
@@ -175,13 +180,13 @@ body {
 }
 
 .footer-col ul li a:hover {
-    color: #b38f4f; 
+    color: #b38f4f;
 }
 
 .action-col {
     display: flex;
     flex-direction: column;
-    align-items: flex-end; 
+    align-items: flex-end;
     gap: 25px;
 }
 
@@ -206,7 +211,7 @@ body {
 
 .social-icons {
     display: flex;
-    gap: 20px; 
+    gap: 20px;
 }
 
 .social-icons .icon {
@@ -216,21 +221,21 @@ body {
     text-decoration: none;
     cursor: pointer;
     background: transparent !important;
-    border: none !important; 
+    border: none !important;
     transition: transform 0.2s ease;
 }
 
 .social-icons .icon:hover {
-    transform: scale(1.2); 
+    transform: scale(1.2);
 }
 
 .social-img {
-    width: 22px; 
+    width: 22px;
     height: auto;
     object-fit: contain;
-    filter: brightness(0) invert(1); 
+    filter: brightness(0) invert(1);
 }
-  
+
 .footer-bottom {
     margin-top: 50px;
     display: flex;
@@ -242,7 +247,7 @@ body {
 .footer-line {
     flex: 1;
     height: 1px;
-    background-color: rgba(255, 255, 255, 0.2); 
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .footer-legal {
@@ -329,4 +334,13 @@ body {
 .btn-consultar:hover {
     background-color: #232d54;
     transform: translateY(-2px);
+}
+
+.logo-animado-home {
+    width: 100%;
+    max-width: 500px; /* Ajusta este número al tamaño real que quieras que ocupe el logo en tu pantalla */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Lo centra automáticamente si está dentro de un contenedor contenedor */
+    object-fit: contain; /* Asegura que el logo no se estire ni se deforme */
 }
