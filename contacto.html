@@ -73,9 +73,9 @@
                     </div>
                 </div>
             </div>
-
             <div class="contacto-form-card">
-                <form action="#" method="POST">
+                <!-- 🌟 Añadimos el id="form-contacto" y quitamos el action anterior -->
+                <form id="form-contacto">
                     <div class="form-group">
                         <input type="text" name="nombres" placeholder="Nombres" required>
                     </div>
@@ -88,7 +88,8 @@
                     <div class="form-group">
                         <textarea name="mensaje" placeholder="Mensaje" rows="4" required></textarea>
                     </div>
-                    <button type="submit" class="btn-enviar-contacto">ENVIAR</button>
+                    <!-- 🌟 Añadimos el id="btn-enviar" -->
+                    <button type="submit" id="btn-enviar" class="btn-enviar-contacto">ENVIAR</button>
                 </form>
             </div>
 
@@ -107,23 +108,23 @@
         </div>
 
         <div class="contacto-estudio-section">
-    <h2 class="contacto-section-title">Conoce nuestro estudio</h2>
-    <div class="contacto-estudio-grid">
-        
-        <div class="estudio-photo-box">
-            <img src="imagenes/ft1contactos.jpg" alt="Oficina Recucapital">
-        </div>
-        
-        <div class="estudio-photo-box">
-            <img src="imagenes/ft2contactos.jpg" alt="Reunión de asesoría legal">
-        </div>
-        
-        <div class="estudio-photo-box">
-            <img src="imagenes/ft3contactos.jpg" alt="Instalaciones Recucapital">
-        </div>
+            <h2 class="contacto-section-title">Conoce nuestro estudio</h2>
+            <div class="contacto-estudio-grid">
 
-    </div>
-</div>
+                <div class="estudio-photo-box">
+                    <img src="imagenes/ft1contactos.jpg" alt="Oficina Recucapital">
+                </div>
+
+                <div class="estudio-photo-box">
+                    <img src="imagenes/ft2contactos.jpg" alt="Reunión de asesoría legal">
+                </div>
+
+                <div class="estudio-photo-box">
+                    <img src="imagenes/ft3contactos.jpg" alt="Instalaciones Recucapital">
+                </div>
+
+            </div>
+        </div>
 
     </div>
     <footer class="footer">
@@ -184,6 +185,39 @@
             </div>
         </div>
     </footer>
+
+
+    <!-- Conectamos con la librería oficial de EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+        // Inicializas EmailJS con la Llave Pública que te darán al registrarte
+        emailjs.init("68Ni6WT3NzyiiejyY");
+
+        const btn = document.getElementById('btn-enviar');
+        const formulario = document.getElementById('form-contacto');
+
+        formulario.addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita que la página se refresque o parpadee
+
+            btn.innerText = 'Enviando...'; // Feedback visual para el cliente
+
+            const serviceID = 'service_prueba';
+            const templateID = 'template_u4y8uhc'; // El ID de la plantilla que crees en EmailJS
+
+            // Envío seguro en segundo plano
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    btn.innerText = 'ENVIAR';
+                    alert('¡Datos enviados con éxito! En breve nos pondremos en contacto con usted.');
+                    formulario.reset(); // Limpia los campos del formulario automáticamente
+                }, (err) => {
+                    btn.innerText = 'ENVIAR';
+                    alert('Hubo un error al enviar tus datos. Por favor, vuelve a intentarlo.');
+                    console.log(JSON.stringify(err));
+                });
+        });
+    </script>
 
 </body>
 

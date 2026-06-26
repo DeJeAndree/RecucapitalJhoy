@@ -343,25 +343,3 @@ body {
     margin: 0 auto; /* Lo centra automáticamente si está dentro de un contenedor contenedor */
     object-fit: contain; /* Asegura que el logo no se estire ni se deforme */
 }
-@media (max-width: 768px) {
-    /* Forzamos a que todo el menú se acomode en una sola fila infinita */
-    .nav-menu {
-        display: flex;
-        flex-direction: row; /* Asegura que se mantengan horizontales */
-        overflow-x: auto;    /* Permite deslizar con el dedo a los lados 👈👉 */
-        white-space: nowrap; /* Evita que las palabras bajen a la siguiente línea */
-        padding: 10px 5px;
-        gap: 15px;
-        scrollbar-width: none; /* Oculta la barra gris fea en Firefox */
-    }
-
-    /* Oculta la barra de scroll en Chrome, Safari y Edge para que se vea limpio */
-    .nav-menu::-webkit-scrollbar {
-        display: none;
-    }
-
-    /* Ocultamos las redes sociales para liberar espacio en el celular */
-    .nav-socials {
-        display: none;
-    }
-}
