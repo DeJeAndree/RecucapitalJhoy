@@ -22,8 +22,9 @@
         <nav class="nav-menu">
             <a href="index.html" class="nav-link">INICIO</a>
             <a href="casos.html" class="nav-link">CASOS DE ÉXITO</a>
-            <a href="nosotros.html" class="nav-link">NOSOTROS</a>
             <a href="servicios.html" class="nav-link">SERVICIOS</a>
+            <a href="nosotros.html" class="nav-link">NOSOTROS</a>
+
             <a href="contacto.html" class="nav-link">CONTÁCTANOS</a>
         </nav>
 
@@ -41,12 +42,18 @@
         </div>
     </header>
 
+    <section class="banner-contacto">
+        <div class="banner-overlay">
+            <div class="banner-contenido">
+                <span class="banner-subtitulo">LISTOS PARA ASESORARTE</span>
+                <h1 class="banner-titulo">Contáctanos</h1>
+                <p class="banner-texto">Estamos aquí para ayudarte con tu caso</p>
+            </div>
+        </div>
+    </section>
+
     <div class="contacto-page-section">
 
-        <div class="contacto-header">
-            <h1 class="contacto-main-title">CONTÁCTANOS</h1>
-            <p class="contacto-subtitle">Estamos aquí para ayudarte con tu caso</p>
-        </div>
 
         <div class="contacto-container-flex">
 
@@ -74,7 +81,7 @@
                 </div>
             </div>
             <div class="contacto-form-card">
-                <!-- 🌟 Añadimos el id="form-contacto" y quitamos el action anterior -->
+
                 <form id="form-contacto">
                     <div class="form-group">
                         <input type="text" name="nombres" placeholder="Nombres" required>
@@ -88,7 +95,7 @@
                     <div class="form-group">
                         <textarea name="mensaje" placeholder="Mensaje" rows="4" required></textarea>
                     </div>
-                    <!-- 🌟 Añadimos el id="btn-enviar" -->
+
                     <button type="submit" id="btn-enviar" class="btn-enviar-contacto">ENVIAR</button>
                 </form>
             </div>
@@ -152,9 +159,9 @@
                 <h3>ENLACES</h3>
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
-                    <li><a href="nosotros.html">Nosotros</a></li>
-                    <li><a href="servicios.html">Servicios</a></li>
                     <li><a href="casos.html">Casos de Éxito</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
                     <li><a href="contacto.html">Contáctanos</a></li>
                 </ul>
             </div>
@@ -180,37 +187,154 @@
         <div class="footer-bottom">
             <div class="footer-line"></div>
             <div class="footer-legal">
-                <a href="#">Términos Y Condiciones</a>
-                <a href="#">Política De Privacidad</a>
+                <a href="#" id="open-terminos">Términos Y Condiciones</a>
+                <a href="#" id="open-privacidad">Política De Privacidad</a>
             </div>
         </div>
+        <div id="modal-terminos" class="modal-legal">
+            <div class="modal-content">
+                <span class="close-modal" id="close-terminos">&times;</span>
+                <h3 class="modal-titulo-fijo">Términos y Condiciones de Uso del Sitio Web</h3>
+                <div class="modal-body-text">
+                    <h3>1. Disposiciones Generales y Aceptación</h3>
+                    <p>El acceso y uso del sitio web de Recucapital atribuye la condición de usuario e implica la
+                        aceptación total y sin reservas de los presentes Términos y Condiciones. Si no está de acuerdo
+                        con estos términos, deberá abstenerse de navegar por el sitio. El Estudio se reserva la facultad
+                        de modificar estas pautas en cualquier momento, siendo vigentes a partir de su publicación en la
+                        web.</p>
+
+                    <h3>2. Condiciones de Uso del Contenido</h3>
+                    <p>El usuario se compromete a hacer un uso lícito y correcto de la plataforma. Queda expresamente
+                        prohibido:</p>
+                    <ul>
+                        <li>Utilizar el sitio web para fines fraudulentos, ilícitos o que atenten contra la reputación
+                            del Estudio.</li>
+                        <li>Introducir virus, malware, scripts dañinos o intentar vulnerar las medidas de seguridad del
+                            servidor o del código de la página.</li>
+                        <li>Extraer, copiar o replicar el contenido del sitio con fines comerciales o de competencia
+                            desleal.</li>
+                    </ul>
+
+                    <h3>3. Propiedad Intelectual</h3>
+                    <p>Todo el material bibliográfico, textos descriptivos de servicios, logotipos, isotipos, marcas
+                        comerciales, diseños estructurales, hojas de estilo (CSS) y código fuente contenidos en este
+                        sitio web son propiedad exclusiva de Recucapital o de sus respectivos licenciantes. Queda
+                        prohibida su reproducción o distribución total o parcial sin una autorización expresa y por
+                        escrito de la gerencia del Estudio.</p>
+
+                    <h3>4. Exclusión de Responsabilidad Legal</h3>
+                    <p>La información publicada en este sitio web tiene un carácter meramente informativo y de
+                        orientación general. No constituye, bajo ninguna circunstancia, un dictamen o asesoría legal
+                        vinculante. La relación abogado-cliente solo se perfecciona mediante la firma de un contrato
+                        formal de servicios jurídicos. El Estudio no se hace responsable por decisiones tomadas por el
+                        usuario basadas exclusivamente en la lectura de los contenidos informativos de la página.</p>
+
+                    <h3>5. Legislación Aplicable y Jurisdicción</h3>
+                    <p>Para todo lo no previsto en estos términos, se aplicarán las leyes de la República del Perú.
+                        Cualquier controversia, discrepancy o reclamación derivada del uso de este sitio web se someterá
+                        a la jurisdicción y competencia exclusiva de los jueces y tribunales del Distrito Judicial de
+                        Lima Cercado, Perú, renunciando expresamente a cualquier otro fuero.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ==========================================
+     VENTANA MODAL: POLÍTICA DE PRIVACIDAD
+     ========================================== -->
+        <div id="modal-privacidad" class="modal-legal">
+            <div class="modal-content">
+                <span class="close-modal" id="close-privacidad">&times;</span>
+                <h3 class="modal-titulo-fijo">Política de Privacidad y Tratamiento de Datos Personales</h3>
+                <div class="modal-body-text">
+                    <p><strong>Última actualización: Junio 2026</strong></p>
+
+                    <p>En <strong>Recucapital</strong>, valoramos la confianza de nuestros usuarios y nos comprometemos
+                        firmemente con la protección, confidencialidad y seguridad de sus datos personales. En
+                        cumplimiento de la Ley N° 29733 (Ley de Protección de Datos Personales de Perú) y su Reglamento,
+                        informamos a continuación las condiciones bajo las cuales tratamos su información.</p>
+
+                    <h3>1. Recopilación de Información</h3>
+                    <p>El Estudio recopila datos personales que usted proporciona voluntariamente a través de nuestros
+                        formularios de contacto web, correos electrónicos o llamadas telefónicas. Estos datos incluyen:
+                    </p>
+                    <ul>
+                        <li><strong>Datos Identificativos:</strong> Nombres completos, Documento Nacional de Identidad
+                            (DNI) o RUC.</li>
+                        <li><strong>Datos de Contacto:</strong> Dirección de correo electrónico, número de teléfono
+                            (móvil o fijo) y domicilio.</li>
+                        <li><strong>Información de Consulta:</strong> Detalles, antecedentes o descripción del caso o
+                            consulta legal que decida suministrar.</li>
+                    </ul>
+
+                    <h3>2. Finalidad del Tratamiento de Datos</h3>
+                    <p>Sus datos personales serán incorporados en nuestro banco de datos de administración interna y
+                        serán tratados exclusivamente para las siguientes finalidades esenciales:</p>
+                    <ul>
+                        <li>Evaluar su solicitud de asesoría, responder consultas legales y remitir cotizaciones de
+                            servicios jurídicos (tales como cobranza judicial, remates judiciales o asesoría de
+                            inversión).</li>
+                        <li>Gestionar la relación contractual, administrativa y comercial en caso de contratar nuestros
+                            servicios.</li>
+                        <li>Remitir información relevante sobre cambios regulatorios, alertas legales o actualizaciones
+                            del Estudio (solo si ha otorgado su consentimiento expreso).</li>
+                    </ul>
+
+                    <h3>3. Transferencia y Compartición de Datos con Terceros</h3>
+                    <p>El Estudio garantiza que no vende, no cede ni comercializa sus datos personales con terceras
+                        empresas. La información solo podrá ser compartida con:</p>
+                    <ul>
+                        <li><strong>Proveedores de servicios tecnológicos:</strong> Empresas que nos brindan soporte de
+                            infraestructura web o correo electrónico (como EmailJS y servidores de alojamiento), las
+                            cuales actúan como encargadas de tratamiento y están sujetas a estrictos acuerdos de
+                            confidencialidad y seguridad.</li>
+                        <li><strong>Autoridades Públicas:</strong> Entidades del Poder Judicial, Ministerio Público o
+                            autoridades regulatorias peruanas, única y exclusivamente cuando exista un mandato legal o
+                            requerimiento judicial expreso.</li>
+                    </ul>
+
+                    <h3>4. Medidas de Seguridad</h3>
+                    <p>Implementamos medidas técnicas, organizativas y legales avanzadas para evitar la pérdida,
+                        alteración, acceso no autorizado o tratamiento ilícito de su información. El tránsito de datos a
+                        través de nuestro sitio web se encuentra cifrado mediante protocolos de seguridad HTTPS
+                        (SSL/TLS).</p>
+
+                    <h3>5. Derechos ARCO</h3>
+                    <p>De acuerdo con la legislación peruana, usted es propietario de sus datos y puede ejercer en
+                        cualquier momento sus derechos de Acceso, Rectificación, Cancelación y Oposición (ARCO). Para
+                        ello, deberá remitir una solicitud escrita detallando su requerimiento a nuestra dirección de
+                        contacto oficial especificada al final de este documento.</p>
+                </div>
+            </div>
+        </div>
+
     </footer>
 
 
-    <!-- Conectamos con la librería oficial de EmailJS -->
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <script type="text/javascript">
-        // Inicializas EmailJS con la Llave Pública que te darán al registrarte
+
         emailjs.init("68Ni6WT3NzyiiejyY");
 
         const btn = document.getElementById('btn-enviar');
         const formulario = document.getElementById('form-contacto');
 
         formulario.addEventListener('submit', function (event) {
-            event.preventDefault(); // Evita que la página se refresque o parpadee
+            event.preventDefault();
 
-            btn.innerText = 'Enviando...'; // Feedback visual para el cliente
+            btn.innerText = 'Enviando...';
 
             const serviceID = 'service_prueba';
-            const templateID = 'template_u4y8uhc'; // El ID de la plantilla que crees en EmailJS
+            const templateID = 'template_u4y8uhc';
 
             // Envío seguro en segundo plano
             emailjs.sendForm(serviceID, templateID, this)
                 .then(() => {
                     btn.innerText = 'ENVIAR';
                     alert('¡Datos enviados con éxito! En breve nos pondremos en contacto con usted.');
-                    formulario.reset(); // Limpia los campos del formulario automáticamente
+                    formulario.reset();
                 }, (err) => {
                     btn.innerText = 'ENVIAR';
                     alert('Hubo un error al enviar tus datos. Por favor, vuelve a intentarlo.');
@@ -218,7 +342,7 @@
                 });
         });
     </script>
-
+    <script src="legal.js"></script>
 </body>
 
 </html>

@@ -212,6 +212,88 @@ div.contacto-page-section {
     border-radius: 4px;
     }
 
+
+
+.banner-contacto {
+    /* 🌟 Reemplaza 'ruta-de-tu-imagen.jpg' por la ubicación real de tu foto de la biblioteca */
+    background-image: url('../imagenes/contbanner.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 350px; /* Controla qué tan alto se verá el banner */
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Capa oscura transparente para que resalte el texto blanco */
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(16, 25, 44, 0.75); /* Azul oscuro de tu marca con transparencia */
+    display: flex;
+    align-items: center;
+    padding: 0 10%; /* Empuja el contenido hacia la derecha como en tu referencia */
+    box-sizing: border-box;
+}
+
+/* Contenedor del texto */
+.banner-contenido {
+    color: #ffffff;
+    font-family: 'Poppins', 'Arial', sans-serif; /* Usa la fuente de tu proyecto */
+    max-width: 600px;
+}
+
+/* El texto pequeño de arriba verde/turquesa */
+.banner-subtitulo {
+    color: #4db6ac; /* Un tono turquesa/verde elegante */
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* El título gigante "Contáctanos" */
+.banner-titulo {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+/* El texto descriptivo opcional */
+.banner-texto {
+    font-size: 18px;
+    color: #e0e0e0;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* --- RESPONSIVE --- */
 @media (max-width: 1200px) {
     div.contacto-page-section {
@@ -235,5 +317,16 @@ div.contacto-page-section {
     }
     .contacto-page-section .contacto-estudio-grid {
         grid-template-columns: 1fr;
+    }
+    .banner-contacto {
+        min-height: 250px;
+    }
+    .banner-overlay {
+        padding: 0 20px;
+        justify-content: center;
+        text-align: center;
+    }
+    .banner-titulo {
+        font-size: 36px;
     }
 }

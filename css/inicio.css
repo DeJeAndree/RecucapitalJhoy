@@ -343,3 +343,86 @@ body {
     margin: 0 auto; /* Lo centra automáticamente si está dentro de un contenedor contenedor */
     object-fit: contain; /* Asegura que el logo no se estire ni se deforme */
 }
+
+
+
+/* El contenedor del fondo de la modal (oscuro y cubre toda la pantalla) */
+.modal-legal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 9999; /* Asegura que esté por encima de TODO */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(16, 25, 44, 0.6); /* Fondo oscuro transparente */
+    backdrop-filter: blur(3px); /* Efecto difuminado elegante */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Caja blanca con la información */
+.modal-content {
+    background-color: #ffffff;
+    /* 🌟 CAMBIO: Reducimos a 20px el padding de arriba, mantenemos 30px a los lados y abajo */
+    padding: 20px 30px 30px 30px; 
+    border-radius: 8px;
+    width: 90%;
+    max-width: 650px;
+    max-height: 80vh; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* El botón de cerrar (X) */
+.close-modal {
+    position: absolute;
+    top: 12px;       /* 🌟 Ajustado un poco más arriba */
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaaaaa;
+    cursor: pointer;
+    transition: color 0.2s;
+    line-height: 1;  /* 🌟 Colapsa la altura invisible de la X */
+    z-index: 10;
+}
+
+.close-modal:hover {
+    color: #1c2842;
+}
+
+.modal-titulo-fijo {
+    color: #1c2842; 
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 5px;   /* 🌟 Un pequeño margen para alinearse perfectamente con la X */
+    margin-bottom: 15px; 
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eaf2fc; 
+}
+
+/* Contenedor del texto con scroll independiente */
+.modal-body-text {
+    overflow-y: auto; 
+    flex-grow: 1;    
+    padding-right: 10px;
+    text-align: left;
+    color: #333333;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.modal-body-text h3 {
+    color: #1c2842; 
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* Animación de entrada */
+@keyframes slideDown {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
