@@ -34,10 +34,10 @@ body {
 
 .nav-menu {
     display: flex;
-    gap: 35px;
+    gap: 20px;
     align-items: center;
     justify-content: center;
-    /* El menú se clava matemáticamente en el medio de la pantalla */
+  
 }
 
 .nav-icon:hover {
@@ -79,19 +79,39 @@ body {
 }
 
 
-.nav-link {
+.nav-menu .nav-link {
+    position: relative;
     text-decoration: none;
-    color: #555555;
+    color: #1c2842; /* El azul oscuro corporativo de Recucapital */
     font-size: 15px;
-    font-weight: 500;
-    white-space: nowrap;
+    font-weight: 500; /* Hace la tipografía un poco más firme y ejecutiva */
+    padding: 8px 4px; /* Espacio arriba/abajo y a los lados del texto */
+    letter-spacing: 0.5px; /* Separa sutilmente las letras de los títulos */
     transition: color 0.3s ease;
 }
 
+
+
+.nav-menu .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;          /* Lo ubica exactamente al centro */
+    width: 0;           /* Comienza completamente invisible */
+    height: 2px;        /* Grosor elegante de la línea */
+    background-color: #1c2842; /* Color de la línea (puedes cambiarlo si usas otro acento) */
+    transform: translateX(-50%); /* Centra el eje del elemento */
+    transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1); /* Transición fluida de expansión */
+}
 .nav-link:hover {
     color: #161d3a;
 }
-
+.nav-menu .nav-link:hover::after {
+    width: 100%;
+}
+.nav-menu .nav-link.active::after {
+    width: 100%;
+}
 .nav-socials {
     display: flex;
     align-items: center;
@@ -328,6 +348,8 @@ body {
     border-radius: 0px;
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: inline-block;
+     position: relative;
+    animation: pulseAnimation 2s infinite;
 }
 
 .btn-consultar:hover {
@@ -425,4 +447,46 @@ body {
 @keyframes slideDown {
     from { transform: translateY(-30px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
+}
+
+/* ==========================================
+   ANIMACIONES DE TRANSICIÓN ENTRE PÁGINAS
+   ========================================== */
+
+/* 1. Efecto Fade-In suave hacia arriba para el contenedor principal */
+.page-transition {
+    animation: fadeInUp 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    opacity: 0; /* Empieza invisible mientras carga */
+}
+
+/* 2. Definición de los fotogramas (Keyframes) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px); /* Empuja la página 15px abajo al inicio */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);    /* Regresa a su posición original */
+    }
+}
+
+/* 🌟 TIP EXTRA: Animación para retrasar elementos (efecto cascada) */
+.delay-1 { animation-delay: 0.15s; }
+.delay-2 { animation-delay: 0.3s; }
+.delay-3 { animation-delay: 0.45s; }
+
+
+
+
+@keyframes pulseAnimation {
+    0% {
+        box-shadow: 0 0 0 0 rgba(28, 40, 66, 0.5); /* Tu azul corporativo con transparencia */
+    }
+    70% {
+        box-shadow: 0 0 0 12px rgba(28, 40, 66, 0); /* La onda se expande y se desvanece */
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(28, 40, 66, 0);
+    }
 }
