@@ -163,3 +163,61 @@
     box-sizing: border-box;
 }
 
+/* ===================================================
+   📱 RESPONSIVE: COMPORTAMIENTO EN CELULARES (< 768px)
+   =================================================== */
+@media (max-width: 768px) {
+    /* Ajustamos el contenedor principal de Nosotros */
+    .nosotros-main {
+        padding: 50px 5%;
+    }
+
+    /* Reducimos el tamaño del título principal para que no se corte en pantallas chicas */
+    .casos-header .main-title {
+        font-size: 32px;
+        text-align: center;
+    }
+    
+    .casos-header {
+        text-align: center;
+    }
+
+    /* 🌟 CAMBIO CLAVE: Cambiamos a columna para apilar Misión y Visión */
+    .mision-vision-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 60px; /* Espaciado cómodo entre los dos bloques al apilarse */
+    }
+
+    /* Cada bloque se estira al ancho disponible en celular */
+    .mv-block {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    /* 🌟 EL TRUCO: Ocultamos la línea vertical divisoria porque ya no hay columnas */
+    .vertical-divider {
+        display: none;
+    }
+
+    /* Centramos el botón de consulta en móviles para mantener armonía visual */
+    .btn-consultarnostros {
+        margin: 30px auto 0 auto;
+        text-align: center;
+        display: block;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    /* Ajustamos el banner de fondo para que el texto respire bien */
+    .banner-overlay {
+        padding: 40px 5%;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .banner-contacto {
+        min-height: 300px;
+    }
+}
