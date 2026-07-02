@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CSS SECCIÓN CONTACTO: VERSIÓN FINAL CORREGIDA CON ICONOS
+   CSS SECCIÓN CONTACTO: VERSIÓN FINAL INTEGRAL RECONSTRUIDA
    ========================================================================== */
 
 /* --- CONTENEDOR MAESTRO --- */
@@ -189,39 +189,56 @@ div.contacto-page-section {
     border: none;
 }
     
-/* --- GALERÍA ESTUDIO --- */
+/* --- GALERÍA ESTUDIO (MEJORADA CON HOVER PREMIUM) --- */
 .contacto-page-section .contacto-estudio-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    /* Distribuye inteligentemente en columnas que se ajustan solas */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; 
     width: 100%;
 }
 
 .contacto-page-section .estudio-photo-box {
+    position: relative;
     width: 100%;
-    aspect-ratio: 4 / 3;
-    border: 1px solid #b0b0b0;
-    background-color: #fafafa;
+    aspect-ratio: 4 / 3; /* Fuerza la proporción idéntica para las tres fotos */
+    background-color: #1d2a44; 
     border-radius: 4px;
+    overflow: hidden; /* Recorta la imagen al hacer zoom para que no se desborde */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: none;
 }
+
 .contacto-page-section .estudio-photo-box img {
     width: 100%;
     height: 100%;
     object-fit: cover; 
     display: block;
     border-radius: 4px;
-    }
+    
+    /* Estado inicial equilibrado: sutil filtro de color y luminosidad */
+    filter: grayscale(25%) brightness(0.92);
+    opacity: 0.95;
+    
+    /* Animación fluida de 0.5s */
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease, opacity 0.5s ease;
+}
 
+/* Micro-interacción al pasar el mouse por encima de la foto */
+.contacto-page-section .estudio-photo-box:hover img {
+    transform: scale(1.06); /* Zoom limpio y elegante del 6% */
+    filter: grayscale(0%) brightness(1); /* Devuelve su color real de alta calidad */
+    opacity: 1;
+}
 
-
+/* --- BANNER DE CABECERA --- */
 .banner-contacto {
-    /* 🌟 Reemplaza 'ruta-de-tu-imagen.jpg' por la ubicación real de tu foto de la biblioteca */
     background-image: url('../imagenes/contbanner.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
-    min-height: 350px; /* Controla qué tan alto se verá el banner */
+    min-height: 350px; 
     position: relative;
     display: flex;
     align-items: center;
@@ -234,23 +251,23 @@ div.contacto-page-section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(16, 25, 44, 0.75); /* Azul oscuro de tu marca con transparencia */
+    background-color: rgba(16, 25, 44, 0.75); 
     display: flex;
     align-items: center;
-    padding: 0 10%; /* Empuja el contenido hacia la derecha como en tu referencia */
+    padding: 0 10%; 
     box-sizing: border-box;
 }
 
 /* Contenedor del texto */
 .banner-contenido {
     color: #ffffff;
-    font-family: 'Poppins', 'Arial', sans-serif; /* Usa la fuente de tu proyecto */
+    font-family: 'Poppins', 'Arial', sans-serif; 
     max-width: 600px;
 }
 
 /* El texto pequeño de arriba verde/turquesa */
 .banner-subtitulo {
-    color: #4db6ac; /* Un tono turquesa/verde elegante */
+    color: #4db6ac; 
     font-size: 14px;
     font-weight: bold;
     letter-spacing: 2px;
@@ -273,28 +290,9 @@ div.contacto-page-section {
     margin: 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* --- RESPONSIVE --- */
+/* ==========================================================================
+   --- RESPONSIVE MEDIA QUERIES ---
+   ========================================================================== */
 @media (max-width: 1200px) {
     div.contacto-page-section {
         padding-left: 30px;
@@ -306,27 +304,45 @@ div.contacto-page-section {
     div.contacto-page-section {
         padding-left: 20px;
         padding-right: 20px;
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
+    
+    .contacto-page-section .contacto-main-title {
+        font-size: 2rem;
+    }
+
     .contacto-page-section .contacto-container-flex {
         grid-template-columns: 1fr;
         row-gap: 40px;
     }
+    
     .contacto-page-section .contacto-item {
-        grid-template-columns: 35px 1fr; /* Mantiene la estructura de iconos en móvil */
+        grid-template-columns: 35px 1fr; 
         gap: 0;
     }
+    
+    /* Ajuste responsivo de la galería para evitar estiramientos desproporcionados */
     .contacto-page-section .contacto-estudio-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
     }
+    
     .banner-contacto {
         min-height: 250px;
     }
+    
     .banner-overlay {
         padding: 0 20px;
         justify-content: center;
         text-align: center;
     }
+    
     .banner-titulo {
         font-size: 36px;
+    }
+    
+    .banner-texto {
+        font-size: 16px;
     }
 }

@@ -211,6 +211,15 @@ body {
     .hamburger-btn.active .bar:nth-child(3) {
         transform: translateY(-7.5px) rotate(-45deg);
     }
+
+    .logo-animado-home {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
 }
 
 /* ===================================================
