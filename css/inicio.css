@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #fcfcfc;
+    background-color: white;
     
 }
 
@@ -114,9 +114,6 @@ body {
     opacity: 1;
 }
 
-/* ===================================================
-   5. BOTÓN HAMBURGUESA (OCULTO POR DEFECTO EN PC)
-   =================================================== */
 .hamburger-btn {
     display: none;
     flex-direction: column;
@@ -395,7 +392,14 @@ body {
     }
 }
 
-
+@keyframes flotarTitulo {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px); /* Sube 6px a la mitad del ciclo */
+    }
+}
 .social-icons {
     display: flex;
     gap: 20px;

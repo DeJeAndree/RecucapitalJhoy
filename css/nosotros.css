@@ -79,6 +79,8 @@
     color: #161d3a;
     letter-spacing: 2px;
     text-transform: uppercase;
+     display: inline-block; 
+    animation: flotarTitulo 3s ease-in-out infinite;
 }
 
 /* Contenedor de las dos columnas */
@@ -156,9 +158,17 @@
     margin-right: auto; 
     text-align: left;
     margin-top: 25px;
+    display: inline-block;
+    position: relative;
+    animation: pulseAnimation 2s infinite;
 }  
+.btn-consultarnostros:hover {
+    animation-play-state: paused; 
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 20px rgba(22, 29, 58, 0.25); 
+    background-color: #1b2447;
 
-
+}  
 .banner-contacto {
     /* 🌟 Reemplaza 'ruta-de-tu-imagen.jpg' por la ubicación real de tu foto de la biblioteca */
     background-image: url('../imagenes/nostrosbanner.png'); 
