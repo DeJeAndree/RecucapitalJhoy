@@ -1,6 +1,4 @@
-/* ===================================================
-   1. ESTILOS GENERALES Y CONFIGURACIÓN BASE
-   =================================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -10,11 +8,9 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #fcfcfc;
+    
 }
 
-/* ===================================================
-   2. HEADER / NAVBAR PRINCIPAL (ESCRITORIO)
-   =================================================== */
 .navbar {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -22,10 +18,18 @@ body {
     padding: 20px 8%;
     background-color: #ffffff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-bottom: 3px solid #e0e0e0;
+    box-sizing: border-box;
+
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 3px solid #e0e0e0;
+
+    transition: top 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.navbar.scroll-abajo {
+    top: -120px; 
 }
 
 .logo {
@@ -47,38 +51,34 @@ body {
     display: block;
 }
 
-/* ===================================================
-   3. MENÚ DE PESTAÑAS (ESTILO PASTILLA / CÁPSULA SUAVE)
-   =================================================== */
+
 .nav-menu {
     display: flex;
-    gap: 10px; /* Espaciado cómodo entre las pastillas */
+    gap: 10px; 
     align-items: center;
     justify-content: center;
 }
 
 .nav-menu .nav-link {
     text-decoration: none;
-    color: #1c2842; /* Azul oscuro corporativo de Recucapital */
+    color: #1c2842; 
     font-size: 14px;
     font-weight: 600;
-    padding: 8px 16px; /* Espaciado interno para dar forma de elipse */
-    border-radius: 20px; /* Bordes completamente redondeados */
+    padding: 8px 16px; 
+    border-radius: 20px; 
     letter-spacing: 0.5px;
     background-color: transparent;
     transition: background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), color 0.3s ease;
 }
 
-/* Hover y pestaña activa en versión de escritorio */
+
 .nav-menu .nav-link:hover,
 .nav-menu .nav-link.active {
-    background-color: #eaf2fc; /* Azul suave de fondo */
+    background-color: #eaf2fc; 
     color: #161d3a;
 }
 
-/* ===================================================
-   4. REDES SOCIALES EN LA CABECERA
-   =================================================== */
+
 .nav-socials {
     display: flex;
     align-items: center;
@@ -323,6 +323,7 @@ body {
 }
 
 .btn-solicita {
+    position: relative;
     background-color: #ffffff;
     color: #161d3a;
     text-decoration: none;
@@ -331,15 +332,69 @@ body {
     font-weight: 600;
     letter-spacing: 0.5px;
     border-radius: 2px;
-    transition: background-color 0.3s ease;
     text-align: center;
     width: 100%;
     max-width: 260px;
+    cursor: pointer;
+    overflow: hidden;
+    display: inline-block;
+    box-sizing: border-box;
+    z-index: 1;
+    
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), color 0.3s ease;
+    will-change: transform; 
+}
+
+.btn-solicita::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        transparent, 
+        transparent 20%, 
+        #d4af37 45%, 
+        #f3e5ab 50%, 
+        #d4af37 55%, 
+        transparent 80%
+    );
+    animation: bordeGiratorio 4s linear infinite;
+    z-index: -2;
+}
+
+.btn-solicita::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    background-color: #ffffff;
+    border-radius: 1px;
+    z-index: -1;
+    transition: background-color 0.3s ease;
 }
 
 .btn-solicita:hover {
+    transform: translateY(-8px); 
+    color: #161d3a;
+}
+
+.btn-solicita:hover::after {
     background-color: #e0e0e0;
 }
+
+@keyframes bordeGiratorio {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 
 .social-icons {
     display: flex;
@@ -427,6 +482,21 @@ body {
     align-items: center;
     gap: 15px;
 }
+/* ===================================================*/
+
+
+.stats-container .stat-item {
+    cursor: pointer; /* Cambia el cursor a mano para invitar a interactuar */
+    
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform; 
+}
+
+.stats-container .stat-item:hover {
+    /* Eleva el bloque hacia arriba 8 píxeles */
+    transform: translateY(-8px); 
+}
+
 
 .stat-number {
     font-family: 'Playfair Display', serif;

@@ -131,3 +131,123 @@
     color: inherit;        /* Mantiene tus colores originales */
     display: block;
 }
+
+/* Base de la tarjeta */
+.servicio-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    height: 250px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Contenido inicial */
+.servicio-icon, 
+.servicio-title {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+}
+
+/* Capa oculta por defecto */
+.servicio-hover-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 25px; /* Ajustamos padding para dar espacio a la flecha */
+    box-sizing: border-box;
+    
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+/* Párrafo descriptivo perfectamente centrado */
+.servicio-desc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #555555;
+    text-align: center;
+    line-height: 1.5;
+    margin: 0; /* Sin márgenes inferiores ya que la flecha ya no ocupa espacio aquí */
+}
+
+/* 🌟 ESTADO INICIAL DE LA FLECHA (Sin rotación, oculta por defecto) */
+.servicio-hover-arrow {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 22px;
+    color: #161d3a;
+    font-weight: bold;
+    
+    opacity: 0;
+    transform: translateX(10px); /* Empujada un poco a la derecha en reposo */
+    transition: opacity 0.3s ease;
+}
+
+/* ==========================================================================
+   DISPARADORES HOVER Y ANIMACIÓN EN BUCLE
+   ========================================================================== */
+
+.servicio-card:not(.card-dark):hover .servicio-icon,
+.servicio-card:not(.card-dark):hover .servicio-title {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.servicio-card:not(.card-dark):hover .servicio-hover-layer {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 🌟 ACTIVA LA ANIMACIÓN CONSTANTE AL HACER HOVER */
+.servicio-card:not(.card-dark):hover .servicio-hover-arrow {
+    opacity: 1;
+    /* Ejecuta la animación de entrada de forma infinita */
+    animation: flechaEntrandoConstante 1s ease-in-out infinite;
+}
+.servicio-card.card-dark {
+    background-color: #161d3a !important; /* Fuerza tu color azul oscuro original */
+}
+
+.servicio-card.card-dark:hover .servicio-title-dark,
+.servicio-card.card-dark:hover .servicio-desc-dark,
+.servicio-card.card-dark:hover .arrow-circle {
+    opacity: 1 !important;
+    transform: none !important;
+    color: #ffffff !important;
+}
+
+
+@keyframes flechaEntrandoConstante {
+    0% {
+        opacity: 0;
+        transform: translateX(-10px); /* Aparece viniendo desde atrás */
+    }
+    30% {
+        opacity: 1;
+        transform: translateX(0);    /* Llega a su posición original */
+    }
+    70% {
+        opacity: 1;
+        transform: translateX(0);    /* Se mantiene un momento quieta */
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(10px);  /* Sale sutilmente hacia la derecha */
+    }
+}

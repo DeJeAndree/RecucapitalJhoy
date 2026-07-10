@@ -59,3 +59,32 @@ if (hamburgerToggle && navMenu) {
     });
 }
 
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
+
+    let ultimaPosicionScroll = window.scrollY || document.documentElement.scrollTop;
+
+    window.addEventListener('scroll', () => {
+        const posicionScrollActual = window.scrollY || document.documentElement.scrollTop;
+
+        // Si estás cerca del inicio (menos de 60px), mantén la barra visible
+        if (posicionScrollActual <= 60) {
+            navbar.classList.remove('scroll-abajo');
+            return;
+        }
+
+        // Oculta al bajar
+        if (posicionScrollActual > ultimaPosicionScroll && !navbar.classList.contains('scroll-abajo')) {
+            navbar.classList.add('scroll-abajo');
+        } 
+        // Muestra al subir
+        else if (posicionScrollActual < ultimaPosicionScroll && navbar.classList.contains('scroll-abajo')) {
+            navbar.classList.remove('scroll-abajo');
+        }
+
+        ultimaPosicionScroll = posicionScrollActual;
+    }, { passive: true });
+});

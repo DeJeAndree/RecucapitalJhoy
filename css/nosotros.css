@@ -24,6 +24,7 @@
     font-weight: 600;
     color: #161d3a;
     letter-spacing: 2px;
+    display: inline-block;
 }
 
 .casos-header .main-title {
@@ -32,22 +33,44 @@
     color: #161d3a; 
     margin: 15px 0 20px 0;
     line-height: 1.2;
+    display: block;
+    opacity: 0;
+    animation: deslizarElegante 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.1s;
 }
-
-/* 🌟 Ahora sí tiene el punto inicial */
 .casos-header .main-title .texto-resaltado {
     color: #5b7bb0;
 }
-
+.casos-header .stats-action {
+    display: block;
+    
+    /* 🌟 Animación del Botón (Aparece al final) */
+    opacity: 0;
+    animation: deslizarElegante 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.5s;
+}
 
 .casos-header .header-desc {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     color: #777777;
     line-height: 1.6;
+    opacity: 0;
+    animation: deslizarElegante 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.3s;
 }
 
 
+@keyframes deslizarElegante {
+    from {
+        opacity: 0;
+        transform: translateX(-35px); /* Desplazamiento sutil desde la izquierda */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Posición original en su sitio */
+    }
+}
 
 .nosotros-title {
     font-family: 'Poppins', sans-serif;

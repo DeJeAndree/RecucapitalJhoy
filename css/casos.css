@@ -6,11 +6,13 @@
     align-items: center;
 }
 
-/* Encabezado */
+/* ==========================================================================
+   ENCABEZADO DE CASOS CON ANIMACIÓN DE ENTRADA INTEGRADA
+   ========================================================================== */
 .casos-header {
-    text-align: left;         
-    width: 100%;              
-    max-width: 900px;         
+    text-align: left;
+    width: 100%;
+    max-width: 900px;
     margin-bottom: 50px;
 }
 
@@ -20,17 +22,27 @@
     font-weight: 600;
     color: #161d3a;
     letter-spacing: 2px;
+    display: inline-block;
+    
+    /* 🌟 Se añade la animación directamente aquí */
+    opacity: 0;
+    animation: deslizarElegante 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 .casos-header .main-title {
     font-family: 'Playfair Display', serif;
     font-size: 42px;
-    color: #161d3a; 
+    color: #161d3a;
     margin: 15px 0 20px 0;
     line-height: 1.2;
+    display: block;
+    
+    /* 🌟 Animación con retraso sutil */
+    opacity: 0;
+    animation: deslizarElegante 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.2s;
 }
 
-/* 🌟 Ahora sí tiene el punto inicial */
 .casos-header .main-title .texto-resaltado {
     color: #5b7bb0;
 }
@@ -40,6 +52,25 @@
     font-size: 14px;
     color: #777777;
     line-height: 1.6;
+    display: block;
+    
+    opacity: 0;
+    animation: deslizarElegante 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.4s;
+}
+
+/* ==========================================================================
+   LOGICA DEL EFECTO (KEYFRAMES)
+   ========================================================================== */
+@keyframes deslizarElegante {
+    from {
+        opacity: 0;
+        transform: translateX(-35px); /* Viene desde la izquierda */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Posición original */
+    }
 }
 
 .divider-line {
@@ -58,10 +89,11 @@
     max-width: 900px;
 }
 
-/* Tarjeta Individual */
 .caso-card {
-    background-color: #eeeff3; /* El color grisáceo claro de fondo */
-    border-left: 4px solid #161d3a; /* Línea gruesa izquierda */
+    background-color: #eeeff3;
+    
+    border-left: 4px solid #161d3a;
+  
     padding: 30px 40px;
     display: flex;
     align-items: center;
@@ -72,10 +104,37 @@
 
 .caso-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    background-color: #1d2a44;
+    transform: translateY(-4px);
 }
 
-/* Número Gigante */
+.caso-card:hover .case-id,
+.caso-card:hover .client-name,
+.caso-card:hover .case-desc {
+    color: #ffffff;
+}
+
+.caso-card:hover .card-number {
+    color: rgba(255, 255, 255, 0.12);
+}
+
+.caso-card:hover .tag {
+    border-color: #ffffff;
+    background-color: #ffffff;
+    color: #1d2a44;
+}
+
+.caso-card:hover .circle-btn {
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+
+.caso-card:hover .arrow-icon {
+    color: #1d2a44;
+}
+
 .card-number {
     font-family: 'Playfair Display', serif;
     font-size: 56px;
@@ -154,12 +213,13 @@
 
 .banner-contacto {
     /* 🌟 Reemplaza 'ruta-de-tu-imagen.jpg' por la ubicación real de tu foto de la biblioteca */
-    background-image: url('../imagenes/casosbanner.png'); 
+    background-image: url('../imagenes/casosbanner.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
-    min-height: 350px; /* Controla qué tan alto se verá el banner */
+    min-height: 350px;
+    /* Controla qué tan alto se verá el banner */
     position: relative;
     display: flex;
     align-items: center;
@@ -172,9 +232,13 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(16, 25, 44, 0.75); /* Azul oscuro de tu marca con transparencia */
+    background-color: rgba(16, 25, 44, 0.75);
+    /* Azul oscuro de tu marca con transparencia */
     display: flex;
     align-items: center;
-    padding: 0 10%; /* Empuja el contenido hacia la derecha como en tu referencia */
+    padding: 0 10%;
+    /* Empuja el contenido hacia la derecha como en tu referencia */
     box-sizing: border-box;
 }
+
+
