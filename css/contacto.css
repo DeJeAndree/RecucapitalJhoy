@@ -78,12 +78,6 @@ div.contacto-page-section {
     padding-top: 25px;
 }
 
-.contacto-icon:hover {
-    animation-play-state: paused; 
-    transform: translateY(-5px); 
-    box-shadow: 0 8px 20px rgba(22, 29, 58, 0.25); 
-    background-color: white;
-}
 .contacto-page-section .contacto-item {
     display: grid;
     grid-template-columns: 35px 1fr; 
@@ -228,7 +222,7 @@ div.contacto-page-section {
 .contacto-page-section .contacto-estudio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px; 
+    gap: 8px; 
     width: 100%;
 }
 
@@ -309,10 +303,22 @@ div.contacto-page-section {
 }
 
 /* Contenedor del texto */
+.banner-overlay {
+   display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center;     /* Centra el contenido verticalmente */
+    width: 100%;
+    min-height: 100%; 
+    padding: 20px;           /* Colchón de seguridad para pantallas pequeñas */
+    box-sizing: border-box;
+}
+
 .banner-contenido {
-    color: #ffffff;
+color: #ffffff;
     font-family: 'Poppins', 'Arial', sans-serif; 
     max-width: 600px;
+    text-align: center;      /* Alinea los textos internamente al centro */
+    margin: 0 auto;          /* Asegura el centrado en cualquier circunstancia */
 }
 
 /* El texto pequeño de arriba verde/turquesa */
@@ -322,7 +328,7 @@ div.contacto-page-section {
     font-weight: bold;
     letter-spacing: 2px;
     text-transform: uppercase;
-    display: inline-block; /* Cambiado a inline-block para que la animación fluya mejor horizontalmente */
+    display: inline-block;
     margin-bottom: 10px;
 
     /* 🌟 Aparece primero */
@@ -354,6 +360,7 @@ div.contacto-page-section {
     animation: deslizarElegante 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
     animation-delay: 0.5s;
 }
+
 
 /* ==========================================================================
    REGLA DE ANIMACIÓN (Agrégala al final si no está en este archivo CSS)
@@ -424,4 +431,72 @@ div.contacto-page-section {
     .banner-texto {
         font-size: 16px;
     }
+}
+.contacto-info-column h2,
+.contacto-info-desc {
+    opacity: 0;
+    display: inline-block; /* Asegura el correcto funcionamiento de los transforms */
+    width: 100%; /* Evita problemas de ancho al usar inline-block */
+    
+    /* 1. Entrada desde la izquierda (0.8s) */
+    /* 2. Flotación infinita (4s) que inicia tras terminar la entrada */
+    animation: 
+        contactoEntradaIzquierda 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards,
+        contactoFlotarInfinito 4s ease-in-out 0.8s infinite;
+    
+    will-change: transform, opacity;
+}
+
+/* 🌟 ANIMACIÓN 1: ENTRADA DESDE LA IZQUIERDA */
+@keyframes contactoEntradaIzquierda {
+    from {
+        opacity: 0;
+        transform: translateX(-30px) translateY(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+}
+
+/* 🌟 ANIMACIÓN 2: FLOTAR SUAVEMENTE DE ARRIBA A ABAJO */
+@keyframes contactoFlotarInfinito {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px); /* Sube 4px sutilmente */
+    }
+}
+.contacto-item {
+    /* Asegura que el cambio de tamaño sea suave al entrar y salir con el mouse */
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+    cursor: pointer; /* Cambia el cursor a una mano para indicar que es interactivo */
+}
+
+
+.contacto-item:hover {
+    transform: scale(1.05) translateX(5px); /* Se agranda un 5% y se mueve 5px a la derecha */
+}
+/* 1. Preparamos las casillas del formulario para una transición suave */
+.form-group input, 
+.form-group textarea {
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+    will-change: transform;
+}
+
+/* 🌟 EFECTO AL PASAR EL MOUSE POR ENCIMA DE UNA CASILLA */
+.form-group input:hover, 
+.form-group textarea:hover {
+    transform: translateY(-3px); /* Levanta solo esa casilla 3px */
+    box-shadow: 0 5px 15px rgba(22, 29, 58, 0.08); /* Le da una sombra suave individual */
+}
+
+/* 🌟 EFECTO CUANDO EL USUARIO DA CLIC PARA ESCRIBIR (OPCIONAL ENFOQUE) */
+.form-group input:focus, 
+.form-group textarea:focus {
+    transform: translateY(-3px); /* Mantiene la casilla levantada mientras escriben */
+    box-shadow: 0 6px 18px rgba(91, 123, 176, 0.15); /* Sombra un poco más marcada */
+    outline: none; /* Quita el borde negro por defecto del navegador */
 }

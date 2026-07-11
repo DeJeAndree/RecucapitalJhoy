@@ -304,3 +304,43 @@
 .subservicio-btn-toggle:hover {
     background-color: #f1f5f9;
 }
+.servicio-main-info {
+    opacity: 0;
+    transform: translateX(-60px); /* Viene desde la izquierda */
+    animation: entrarDesdeLado 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    will-change: transform, opacity;
+}
+
+@keyframes entrarDesdeLado {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.cta-box-card {
+    /* Asegura que el movimiento y la sombra cambien de forma fluida */
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+    will-change: transform;
+}
+
+/* 🌟 EFECTO DE ELEVACIÓN AL PASAR EL MOUSE */
+.cta-box-card:hover {
+    transform: translateY(-8px); /* Levanta la tarjeta 8px */
+    box-shadow: 0 12px 30px rgba(22, 29, 58, 0.15); /* Añade una sombra suave abajo */
+}
+.subservicio-card {
+    /* Mantiene tus estilos actuales y añade transiciones suaves */
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+    will-change: transform;
+}
+
+/* 🌟 EFECTO DE ELEVACIÓN AL PASAR EL MOUSE */
+.subservicio-card:hover {
+    transform: translateY(-6px); /* Levanta la tarjeta 6px */
+    box-shadow: 0 10px 25px rgba(22, 29, 58, 0.12); /* Sombra suave para dar profundidad */
+}

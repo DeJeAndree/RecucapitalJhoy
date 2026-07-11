@@ -254,3 +254,62 @@
         min-height: 300px;
     }
 }
+/* El título contenedor */
+.mv-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* La línea oculta */
+.mv-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #5b7bb0; /* Tu color corporativo */
+    transition: width 0.3s ease;
+}
+
+/* Al pasar el mouse sobre el bloque, la línea se expande */
+.mv-block:hover .mv-title::after {
+    width: 100%;
+}
+.mv-desc, 
+.case-desc, 
+.servicio-header-desc {
+    opacity: 0;
+    display: inline-block; /* Asegura que las propiedades de transform funcionen correctamente */
+    
+    /* 1. Aplica la entrada desde la izquierda (dura 0.8s una sola vez) */
+    /* 2. Aplica el balanceo vertical (dura 4s, empieza después de la entrada y es infinito) */
+    animation: 
+        textoIzquierdaDerecha 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards,
+        textoFlotarInfinito 4s ease-in-out 0.8s infinite;
+    
+    will-change: transform, opacity;
+}
+
+/* 🌟 ANIMACIÓN 1: ENTRADA DESDE LA IZQUIERDA */
+@keyframes textoIzquierdaDerecha {
+    from {
+        opacity: 0;
+        transform: translateX(-30px) translateY(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+}
+
+/* 🌟 ANIMACIÓN 2: FLOTAR DE ARRIBA A ABAJO (Microinteracción sutil) */
+@keyframes textoFlotarInfinito {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px); /* Sube 4px sutilmente para no incomodar la lectura */
+    }
+}

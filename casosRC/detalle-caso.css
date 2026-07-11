@@ -216,22 +216,21 @@
 
 /* 🌟 HOVER: Cambia la tarjeta de datos a Azul Oscuro */
 .case-data-sidebar .data-card:hover {
-    background-color: #161d3a; /* Tu color azul corporativo principal */
-    border-left-color: #5b7bb0; /* Cambia la línea vertical al azul claro destacado */
-    transform: translateY(-2px); /* Pequeño levante sutil */
+    background-color: #161d3a; 
+    border-left-color: #5b7bb0; 
+    transform: translateY(-2px); 
 }
 
 .case-data-sidebar .data-card:hover .card-label {
-    color: #4db6ac !important; /* El tono verde/azul claro que usas para subtítulos */
+    color: #4db6ac !important;
 }
 
 .case-data-sidebar .data-card:hover .card-value {
-    color: #ffffff !important; /* El número o texto principal pasa a blanco */
+    color: #ffffff !important; 
 }
 
-/* Control para el texto resaltado de 'RESULTADO' dentro del hover */
 .case-data-sidebar .data-card:hover .card-value.card-highlight {
-    color: #5b7bb0 !important; /* Mantiene un tono destacado para el logro obtenido */
+    color: #5b7bb0 !important; 
 }
 
 
@@ -310,5 +309,27 @@
     to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+.case-data-sidebar {
+    /* Estado inicial invisible y desplazado hacia arriba */
+    opacity: 0;
+    transform: translateY(-50px);
+    
+    /* Configuración de la animación de entrada */
+    animation: entrarDesdeArriba 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.2s; /* Pequeño retraso opcional para un efecto más fluido */
+}
+
+/* 🌟 ANIMACIÓN DE ENTRADA DESDE ARRIBA */
+@keyframes entrarDesdeArriba {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

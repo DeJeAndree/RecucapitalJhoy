@@ -342,24 +342,6 @@ body {
     will-change: transform; 
 }
 
-.btn-solicita::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(
-        transparent, 
-        transparent 20%, 
-        #d4af37 45%, 
-        #f3e5ab 50%, 
-        #d4af37 55%, 
-        transparent 80%
-    );
-    animation: bordeGiratorio 4s linear infinite;
-    z-index: -2;
-}
 
 .btn-solicita::after {
     content: '';
