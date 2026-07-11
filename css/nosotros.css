@@ -133,6 +133,7 @@
     color: #666666;
     line-height: 1.7;
     max-width: 440px;
+    text-align: justify;
 }
 
 .vertical-divider {

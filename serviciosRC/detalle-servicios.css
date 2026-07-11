@@ -322,25 +322,57 @@
     }
 }
 
+/* ==========================================
+   TARJETA DE LLAMADO A LA ACCIÓN (CTA CARD)
+   ========================================== */
 .cta-box-card {
-    /* Asegura que el movimiento y la sombra cambien de forma fluida */
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
     will-change: transform;
 }
 
-/* 🌟 EFECTO DE ELEVACIÓN AL PASAR EL MOUSE */
 .cta-box-card:hover {
     transform: translateY(-8px); /* Levanta la tarjeta 8px */
-    box-shadow: 0 12px 30px rgba(22, 29, 58, 0.15); /* Añade una sombra suave abajo */
-}
-.subservicio-card {
-    /* Mantiene tus estilos actuales y añade transiciones suaves */
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
-    will-change: transform;
+    box-shadow: 0 12px 30px rgba(22, 29, 58, 0.15); /* Sombra suave abajo */
 }
 
-/* 🌟 EFECTO DE ELEVACIÓN AL PASAR EL MOUSE */
-.subservicio-card:hover {
-    transform: translateY(-6px); /* Levanta la tarjeta 6px */
+/* ==========================================
+   TARJETAS DE SUBSERVICIOS (FONDO CLARO)
+   ========================================== */
+
+/* 1. Estado Inicial (Ocultas abajo para el efecto de scroll con JS) y Transiciones */
+.subservicio-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                opacity 0.8s ease, 
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+    will-change: transform, opacity;
+}
+
+/* 2. Textos internos preparados para cambiar de color suavemente */
+.subservicio-card h3,
+.subservicio-card .subservicio-num,
+.subservicio-card .subservicio-btn-toggle {
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+/* 3. Clase que activa JavaScript cuando el usuario hace scroll */
+.subservicio-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 4. Efecto de elevación al pasar el mouse (Mantiene su fondo claro original) */
+.subservicio-card.visible:hover {
+    transform: translateY(-6px); /* Se levanta 6px */
     box-shadow: 0 10px 25px rgba(22, 29, 58, 0.12); /* Sombra suave para dar profundidad */
+}
+
+/* 5. El título, el número y el botón "+" cambian al color azul #5b7bb0 */
+.subservicio-card.visible:hover h3,
+.subservicio-card.visible:hover .subservicio-num,
+.subservicio-card.visible:hover .subservicio-btn-toggle {
+    color: #5b7bb0;
+    border-color: #5b7bb0; /* Si el botón "+" usa borde, también cambia */
 }

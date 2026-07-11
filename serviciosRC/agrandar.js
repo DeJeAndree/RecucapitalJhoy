@@ -22,3 +22,28 @@ if (subservicioCards.length > 0) {
         }
     });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Configuración del detector
+    const opciones = {
+        root: null, // Usa la pantalla del navegador como referencia
+        rootMargin: "0px",
+        threshold: 0.15 // Se activa cuando el 15% de la tarjeta ya es visible en pantalla
+    };
+
+    const aparecerAlScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            // Si la tarjeta entra en la pantalla
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target); // Deja de vigilarla para que la animación solo ocurra una vez
+            }
+        });
+    }, opciones);
+
+    // Selecciona todas tus tarjetas de subservicio y empieza a vigilarlas
+    const tarjetas = document.querySelectorAll(".subservicio-card");
+    tarjetas.forEach(tarjeta => {
+        aparecerAlScroll.observe(tarjeta);
+    });
+});
