@@ -6,16 +6,16 @@
 }
 /* 1. Fondo completo de la pantalla de carga */
 #pantalla-carga {
-    position: fixed;
+    position: fixed; /* 🌟 Congela la pantalla encima de todo */
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: #ffffff; /* Fondo blanco (puedes cambiarlo a #161d3a si prefieres fondo azul) */
+    background-color: #ffffff; /* Tapará todo con fondo blanco */
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 99999; /* Se asegura de estar por encima de todo el diseño */
+    z-index: 99999; /* 🌟 Obliga a que se ponga encima del menú y de cualquier otro elemento */
     transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
@@ -30,8 +30,11 @@
 
 /* 3. Estilo del logo (Efecto sutil de respiración) */
 .loader-logo {
-    max-width: 180px; /* Ajusta el tamaño de tu logo aquí */
-    height: auto;
+   width: 100%;
+    max-width: 250px; /* 🌟 Esto controla el tamaño real en pantalla. Cambia 250px por el tamaño que quieras */
+    height: auto;     /* Mantiene la proporción para que no se deforme */
+    display: block;
+    margin: 0 auto;   /* Asegura que esté centrado */
     animation: latidoLogo 1.5s ease-in-out infinite;
 }
 
