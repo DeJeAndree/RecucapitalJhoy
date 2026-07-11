@@ -264,43 +264,39 @@
     
 
 
-
-    .case-story .case-number,
+/* ==========================================
+   COLUMNA IZQUIERDA: ENTRADA SIMULTÁNEA
+   ========================================== */
+.case-story .case-number,
 .case-story .case-title,
 .case-story .case-tag,
-.case-story .line-divider {
-    opacity: 0;
-    animation: deslizarElegante 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-}
-.case-story .case-number { animation-delay: 0.1s; }
-.case-story .case-title  { animation-delay: 0.2s; }
-.case-story .case-tag    { animation-delay: 0.3s; }
-.case-story .line-divider { animation-delay: 0.35s; }
-
-.case-story .story-section {
-    opacity: 0;
-    animation: deslizarElegante 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-}
-
-.case-story .story-section:nth-of-type(1) {
-    animation-delay: 0.45s;
-}
-
-.case-story .story-section:nth-of-type(2) {
-    animation-delay: 0.6s;
-}
-
-.case-story .story-section:nth-of-type(3) {
-    animation-delay: 0.75s;
-}
-
+.case-story .line-divider,
+.case-story .story-section,
 .case-story .btn-service {
-    display: inline-block;
     opacity: 0;
     animation: deslizarElegante 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-    animation-delay: 0.9s;
+    
+    /* 🌟 Todos los elementos esperan exactamente el mismo tiempo antes de entrar */
+    animation-delay: 0.3s; 
 }
 
+
+/* ==========================================
+   COLUMNA DERECHA: SIDEBAR
+   ========================================== */
+.case-data-sidebar {
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: entrarDesdeArriba 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    
+    /* Mantiene el mismo tiempo de espera que la izquierda para que todo cargue a la par */
+    animation-delay: 0.3s; 
+}
+
+
+/* ==========================================
+   KEYFRAMES (ANIMACIONES)
+   ========================================== */
 @keyframes deslizarElegante {
     from {
         opacity: 0;
@@ -312,17 +308,6 @@
     }
 }
 
-.case-data-sidebar {
-    /* Estado inicial invisible y desplazado hacia arriba */
-    opacity: 0;
-    transform: translateY(-50px);
-    
-    /* Configuración de la animación de entrada */
-    animation: entrarDesdeArriba 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-    animation-delay: 0.2s; /* Pequeño retraso opcional para un efecto más fluido */
-}
-
-/* 🌟 ANIMACIÓN DE ENTRADA DESDE ARRIBA */
 @keyframes entrarDesdeArriba {
     from {
         opacity: 0;
