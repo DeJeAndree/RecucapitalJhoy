@@ -4,6 +4,73 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* 1. Fondo completo de la pantalla de carga */
+#pantalla-carga {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff; /* Fondo blanco (puedes cambiarlo a #161d3a si prefieres fondo azul) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999; /* Se asegura de estar por encima de todo el diseño */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* 2. Contenedor interno del logo */
+.loader-contenido {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 3. Estilo del logo (Efecto sutil de respiración) */
+.loader-logo {
+    max-width: 180px; /* Ajusta el tamaño de tu logo aquí */
+    height: auto;
+    animation: latidoLogo 1.5s ease-in-out infinite;
+}
+
+/* 4. Barra de carga minimalista debajo del logo (Opcional pero recomendado) */
+.loader-linea {
+    width: 100px;
+    height: 3px;
+    background-color: #e0e0e0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.loader-linea::after {
+    content: '';
+    position: absolute;
+    left: -50%;
+    height: 100%;
+    width: 50%;
+    background-color: #5b7bb0; /* El color azul que estás usando */
+    animation: cargandoBarra 1.2s linear infinite;
+}
+
+/* 🌟 ANIMACIONES CSS */
+@keyframes latidoLogo {
+    0%, 100% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.04); opacity: 1; }
+}
+
+@keyframes cargandoBarra {
+    0% { left: -50%; }
+    100% { left: 100%; }
+}
+
+/* Clase que ocultará todo de forma fluida */
+#pantalla-carga.oculto {
+    opacity: 0;
+    visibility: hidden;
+}
 
 body {
     font-family: 'Poppins', sans-serif;

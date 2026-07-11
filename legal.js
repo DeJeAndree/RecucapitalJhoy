@@ -1,4 +1,19 @@
 
+        
+        
+        window.addEventListener("load", () => {
+    const preloader = document.getElementById("pantalla-carga");
+    
+    // Le añade la clase para desvanecerlo suavemente
+    preloader.classList.add("oculto");
+    
+    // Opcional: Remueve el div del HTML después de la animación para limpiar el código
+    setTimeout(() => {
+        preloader.remove();
+    }, 500); 
+});
+        
+        
         const openTerminos = document.getElementById('open-terminos');
         const openPrivacidad = document.getElementById('open-privacidad');
         const modalTerminos = document.getElementById('modal-terminos');
