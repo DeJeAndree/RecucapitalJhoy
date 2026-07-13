@@ -237,3 +237,70 @@
 }
 
 
+/* 📱 RESPONSIVO: Estilos exclusivos para celulares (pantallas menores a 768px) */
+@media (max-width: 768px) {
+    
+    /* 1. Ajuste del contenedor principal y cabecera */
+    .casos-main {
+        padding: 20px 15px; /* Reduce márgenes externos para ganar espacio */
+    }
+
+    .casos-header {
+        text-align: center; /* Centra el título y descripción en móviles */
+        margin-bottom: 30px;
+    }
+
+    .main-title {
+        font-size: 24px; /* Reduce el tamaño del título grande para que no ocupe toda la pantalla */
+        line-height: 1.3;
+    }
+
+    .header-desc {
+        font-size: 14px;
+        max-width: 100%; /* Permite que el texto use todo el ancho disponible */
+    }
+
+    /* 2. Reordenamiento de las tarjetas */
+    .cards-container {
+        display: flex;
+        flex-direction: column; /* Apila las tarjetas una debajo de otra */
+        gap: 20px; /* Espaciado uniforme entre tarjetas */
+    }
+
+    .caso-card {
+        display: flex;
+        flex-direction: column; /* Cambia la tarjeta a diseño vertical si es horizontal en PC */
+        align-items: flex-start;
+        padding: 20px;
+        position: relative; /* Para acomodar el botón circular si es necesario */
+    }
+
+    /* Ajuste de elementos internos de la tarjeta */
+    .card-number {
+        font-size: 28px; /* Un tamaño de número más equilibrado en móvil */
+        margin-bottom: 10px;
+    }
+
+    .card-content {
+        width: 100%;
+    }
+
+    .client-name {
+        font-size: 18px;
+        margin: 5px 0;
+    }
+
+    .case-desc {
+        font-size: 14px;
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+
+    /* 3. Ajuste para el botón de la flecha en móvil */
+    .circle-btn {
+        align-self: flex-end; /* Lo tira hacia la esquina inferior derecha */
+        margin-top: 10px;
+        width: 40px;  /* Ajusta el tamaño de la esfera para que sea fácil de presionar con el dedo */
+        height: 40px;
+    }
+}
