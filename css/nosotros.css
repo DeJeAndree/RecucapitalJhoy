@@ -197,72 +197,105 @@
     box-sizing: border-box;
 }
 
-/* ===================================================
-   📱 RESPONSIVE: COMPORTAMIENTO EN CELULARES (< 768px)
-   =================================================== */
+
 @media (max-width: 768px) {
-    /* Ajustamos el contenedor principal de Nosotros */
     .nosotros-main {
-        padding: 50px 5%;
+        padding: 20px 15px;
     }
 
-    /* Reducimos el tamaño del título principal para que no se corte en pantallas chicas */
-    .casos-header .main-title {
-        font-size: 32px;
-        text-align: center;
-    }
-    
     .casos-header {
-        text-align: center;
+        text-align: left;
+        margin-bottom: 35px;
+        padding-left: 5px;
     }
 
-    /* 🌟 CAMBIO CLAVE: Cambiamos a columna para apilar Misión y Visión */
+    .casos-header .main-title {
+        font-size: 24px;
+        line-height: 1.3;
+        text-align: left;
+        margin-bottom: 15px;
+    }
+
+    .header-desc {
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: left;
+        max-width: 95%;
+    }
+
     .mision-vision-container {
+        display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 60px; /* Espaciado cómodo entre los dos bloques al apilarse */
+        align-items: flex-start;
+        gap: 30px;
     }
 
-    /* Cada bloque se estira al ancho disponible en celular */
     .mv-block {
         width: 100%;
         max-width: 100%;
         padding: 0;
+        text-align: left;
+        position: relative;
     }
 
-    /* 🌟 EL TRUCO: Ocultamos la línea vertical divisoria porque ya no hay columnas */
+    .mv-number {
+        font-size: 70px; 
+        position: absolute;
+        top: -20px;       
+        left: 0;          
+        z-index: -1;
+        opacity: 0.1;    
+    }
+
+    .mv-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .mv-desc {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
     .vertical-divider {
         display: none;
     }
 
-    /* Centramos el botón de consulta en móviles para mantener armonía visual */
-    .btn-consultarnostros {
-        margin: 30px auto 0 auto;
-        text-align: center;
-        display: block;
-        width: 100%;
-        max-width: 280px;
+    .stats-action {
+        margin-top: 25px;
+        text-align: left;
     }
 
-    /* Ajustamos el banner de fondo para que el texto respire bien */
-    .banner-overlay {
-        padding: 40px 5%;
-        justify-content: center;
+    .btn-consultarnostros {
+        display: inline-block;
+        margin: 0;
         text-align: center;
+        width: 100%;
+        max-width: 280px;
+        padding: 12px 20px;
+        font-size: 15px;
+    }
+
+    .banner-overlay {
+        padding: 40px 15px;
+        justify-content: flex-start;
+        text-align: left;
     }
     
     .banner-contacto {
         min-height: 300px;
     }
 }
-/* El título contenedor */
+
+/* ===================================================
+   ✨ ESTILOS GENERALES Y ANIMACIONES
+   =================================================== */
 .mv-title {
     position: relative;
     display: inline-block;
     padding-bottom: 5px;
 }
 
-/* La línea oculta */
 .mv-title::after {
     content: '';
     position: absolute;
@@ -270,29 +303,25 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #5b7bb0; /* Tu color corporativo */
+    background-color: #5b7bb0;
     transition: width 0.3s ease;
 }
 
-/* Al pasar el mouse sobre el bloque, la línea se expande */
 .mv-block:hover .mv-title::after {
     width: 100%;
 }
+
 .mv-desc, 
 .case-desc, 
 .servicio-header-desc {
     opacity: 0;
-    display: inline-block; /* Asegura que las propiedades de transform funcionen correctamente */
-    
-    /* 1. Aplica la entrada desde la izquierda (dura 0.8s una sola vez) */
-    /* 2. Aplica el balanceo vertical (dura 4s, empieza después de la entrada y es infinito) */
+    display: inline-block;
     animation: 
         textoIzquierdaDerecha 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards,
         textoFlotarInfinito 4s ease-in-out 0.8s infinite;
     
     will-change: transform, opacity;
 }
-
 /* 🌟 ANIMACIÓN 1: ENTRADA DESDE LA IZQUIERDA */
 @keyframes textoIzquierdaDerecha {
     from {
