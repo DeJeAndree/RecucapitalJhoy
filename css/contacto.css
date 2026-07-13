@@ -218,7 +218,7 @@ div.contacto-page-section {
     }
 }
     
-/* --- GALERÍA ESTUDIO (MEJORADA CON HOVER PREMIUM) --- */
+
 .contacto-page-section .contacto-estudio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -233,7 +233,7 @@ div.contacto-page-section {
     background-color: #1d2a44; 
     border-radius: 4px;
     
-    /* REMOVIDO: overflow: hidden (para que el borde de la foto crezca hacia afuera) */
+ 
     
     opacity: 0;
     animation: entrarDesdeArriba 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
@@ -493,10 +493,20 @@ color: #ffffff;
     box-shadow: 0 5px 15px rgba(22, 29, 58, 0.08); /* Le da una sombra suave individual */
 }
 
-/* 🌟 EFECTO CUANDO EL USUARIO DA CLIC PARA ESCRIBIR (OPCIONAL ENFOQUE) */
+
 .form-group input:focus, 
 .form-group textarea:focus {
-    transform: translateY(-3px); /* Mantiene la casilla levantada mientras escriben */
-    box-shadow: 0 6px 18px rgba(91, 123, 176, 0.15); /* Sombra un poco más marcada */
-    outline: none; /* Quita el borde negro por defecto del navegador */
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 18px rgba(91, 123, 176, 0.15); 
+    outline: none; 
+}
+
+.contacto-item-link {
+    text-decoration: none; 
+    color: inherit;        
+    display: block;        
+}
+
+.contacto-item-link:hover .contacto-item {
+    opacity: 0.85;         
 }

@@ -351,8 +351,10 @@ body {
 
 .desc-col p {
     font-size: 14px;
-    line-height: 1.6;
     color: #e0e0e0;
+    max-width: 270px; 
+    line-height: 1.6; 
+
 }
 
 .footer-col h3 {
@@ -398,7 +400,7 @@ body {
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 0.5px;
-    border-radius: 2px;
+    border-radius: 4px; 
     text-align: center;
     width: 100%;
     max-width: 260px;
@@ -407,11 +409,14 @@ body {
     display: inline-block;
     box-sizing: border-box;
     z-index: 1;
-    
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), color 0.3s ease;
     will-change: transform; 
-}
+    
 
+    transition: background-color 0.3s ease, transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, color 0.3s ease;
+    
+
+    animation: pulseAnimationBlanco 2s infinite;
+}
 
 .btn-solicita::after {
     content: '';
@@ -421,7 +426,7 @@ body {
     right: 4px;
     bottom: 4px;
     background-color: #ffffff;
-    border-radius: 1px;
+    border-radius: 8px;
     z-index: -1;
     transition: background-color 0.3s ease;
 }
@@ -429,18 +434,28 @@ body {
 .btn-solicita:hover {
     transform: translateY(-8px); 
     color: #161d3a;
+    animation-play-state: paused; 
+    box-shadow: 0 10px 20px rgba(22, 29, 58, 0.15);
 }
 
 .btn-solicita:hover::after {
     background-color: #e0e0e0;
 }
 
-@keyframes bordeGiratorio {
-    from {
-        transform: rotate(0deg);
+@keyframes pulseAnimationBlanco {
+    0% {
+        transform: scale(1);
+        /* Genera un destello blanco sutil muy pegado al botón */
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
     }
-    to {
-        transform: rotate(360deg);
+    70% {
+        transform: scale(1.02); /* El botón crece ligeramente */
+        /* Expande el halo blanco hacia afuera en el fondo oscuro y lo desvanece */
+        box-shadow: 0 0 0 14px rgba(255, 255, 255, 0); 
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
     }
 }
 
@@ -599,9 +614,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* ===================================================
-   9. VENTANAS MODALES LEGALES (POLÍTICAS)
-   =================================================== */
+
 .modal-legal {
     display: none;
     position: fixed;
