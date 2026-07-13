@@ -237,47 +237,48 @@
 }
 
 
-/* 📱 RESPONSIVO: Estilos exclusivos para celulares (pantallas menores a 768px) */
+/* 📱 RESPONSIVO: Solo se activa en celulares (Pantallas de PC no se ven afectadas) */
 @media (max-width: 768px) {
     
-    /* 1. Ajuste del contenedor principal y cabecera */
-    .casos-main {
-        padding: 20px 15px; /* Reduce márgenes externos para ganar espacio */
-    }
-
+    /* 1. Cabecera alineada a la izquierda de forma limpia */
     .casos-header {
-        text-align: center; /* Centra el título y descripción en móviles */
-        margin-bottom: 30px;
+        text-align: left; 
+        margin-bottom: 35px;
+        padding-left: 5px; /* Pequeño margen para que no choque al borde de la pantalla */
     }
 
     .main-title {
-        font-size: 24px; /* Reduce el tamaño del título grande para que no ocupe toda la pantalla */
+        font-size: 24px; /* Tamaño equilibrado para celulares */
         line-height: 1.3;
+        margin-bottom: 15px;
     }
 
     .header-desc {
         font-size: 14px;
-        max-width: 100%; /* Permite que el texto use todo el ancho disponible */
+        line-height: 1.5;
+        max-width: 95%; /* Deja un aire sutil en el borde derecho */
     }
 
-    /* 2. Reordenamiento de las tarjetas */
+    .divider-line {
+        margin: 20px 0 0 0; /* Mueve la línea divisoria hacia la izquierda */
+    }
+
+    /* 2. Reordenamiento de las tarjetas en formato vertical */
     .cards-container {
         display: flex;
-        flex-direction: column; /* Apila las tarjetas una debajo de otra */
-        gap: 20px; /* Espaciado uniforme entre tarjetas */
+        flex-direction: column; /* Apila las tarjetas una abajo de otra */
+        gap: 20px; 
     }
 
     .caso-card {
         display: flex;
-        flex-direction: column; /* Cambia la tarjeta a diseño vertical si es horizontal en PC */
+        flex-direction: column; 
         align-items: flex-start;
         padding: 20px;
-        position: relative; /* Para acomodar el botón circular si es necesario */
     }
 
-    /* Ajuste de elementos internos de la tarjeta */
     .card-number {
-        font-size: 28px; /* Un tamaño de número más equilibrado en móvil */
+        font-size: 28px;
         margin-bottom: 10px;
     }
 
@@ -296,11 +297,11 @@
         margin-bottom: 15px;
     }
 
-    /* 3. Ajuste para el botón de la flecha en móvil */
+    /* 3. Posicionamiento de la flecha en la esquina inferior */
     .circle-btn {
-        align-self: flex-end; /* Lo tira hacia la esquina inferior derecha */
+        align-self: flex-end; 
         margin-top: 10px;
-        width: 40px;  /* Ajusta el tamaño de la esfera para que sea fácil de presionar con el dedo */
+        width: 40px;  
         height: 40px;
     }
 }
